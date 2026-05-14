@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Flame, Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { createClient } from '@supabase/supabase-js';
 import { AnimatedBackground } from './components/AnimatedBackground';
@@ -15,7 +15,7 @@ import { CinematicScene } from './components/CinematicScene';
 import { DataStream } from './components/DataStream';
 import { ValorantAbilities } from './components/ValorantAbilities';
 import { GamingSection } from './components/GamingSection';
-import { JoinOurLineup } from './components/JoinOurLineup';
+import { AchievementBadges } from './components/AchievementBadges';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -95,23 +95,20 @@ function App() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <motion.div
-              className="flex-shrink-0 flex items-center gap-3"
+              className="flex-shrink-0 flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.img
-                src="/1000195278.png"
-                alt="FRAG eSports"
-                className="w-12 h-12"
+              <motion.div
+                className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-800 rounded flex items-center justify-center"
                 animate={{
-                  boxShadow: ['0 0 20px rgba(239, 68, 68, 0.5)', '0 0 40px rgba(239, 68, 68, 0.8)', '0 0 20px rgba(239, 68, 68, 0.5)'],
+                  boxShadow: ['0 0 10px rgba(239, 68, 68, 0.5)', '0 0 30px rgba(239, 68, 68, 0.8)', '0 0 10px rgba(239, 68, 68, 0.5)'],
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
-              />
-              <div className="flex flex-col leading-tight">
-                <span className="text-xl font-black tracking-widest text-white">FRAG</span>
-                <span className="text-xs font-bold tracking-widest text-red-500">ESPORTS</span>
-              </div>
+              >
+                <Flame className="w-6 h-6" />
+              </motion.div>
+              <span className="text-2xl font-black tracking-wider">FRAG</span>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -186,8 +183,8 @@ function App() {
         <GamingSection />
       </section>
 
-      {/* Join Our Lineup */}
-      <JoinOurLineup />
+      {/* Achievements */}
+      <AchievementBadges />
 
       {/* Partners */}
       <section id="partners">

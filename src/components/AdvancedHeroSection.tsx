@@ -153,8 +153,8 @@ export const AdvancedHeroSection: React.FC<AdvancedHeroSectionProps> = ({ onExpl
           </motion.span>
         </motion.p>
 
-        {/* CTA Button */}
-        <motion.div variants={itemVariants} className="flex justify-center">
+        {/* CTA Buttons with advanced effects */}
+        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6 justify-center">
           <motion.button
             onClick={onExplore}
             className="group relative px-10 py-4 overflow-hidden rounded-lg font-bold uppercase tracking-wider text-lg"
@@ -186,6 +186,28 @@ export const AdvancedHeroSection: React.FC<AdvancedHeroSectionProps> = ({ onExpl
                 transition={{ duration: 0.3 }}
               >
                 →
+              </motion.span>
+            </span>
+          </motion.button>
+
+          <motion.button
+            className="group relative px-10 py-4 overflow-hidden rounded-lg font-bold uppercase tracking-wider text-lg border-2 border-red-500 text-red-400"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.div
+              className="absolute inset-0 bg-red-600/20"
+              initial={{ x: '100%' }}
+              whileHover={{ x: 0 }}
+              transition={{ duration: 0.4 }}
+            />
+            <span className="relative flex items-center justify-center gap-2">
+              WATCH BATTLES
+              <motion.span
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                ◉
               </motion.span>
             </span>
           </motion.button>
